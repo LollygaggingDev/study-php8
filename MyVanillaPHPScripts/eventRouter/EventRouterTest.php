@@ -1,6 +1,6 @@
 <?php
 
-require 'eventrouter.php';
+require 'EventRouter.php';
 
 class MyListener implements EventListener {
 	/**
