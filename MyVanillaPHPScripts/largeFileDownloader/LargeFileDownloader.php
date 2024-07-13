@@ -31,13 +31,18 @@ class LargeFileDownloader {
 
         curl_exec($ch); 
 
+        $closeResources = function($ch, $fp) {
+            curl_close($ch);
+            fclose($fp);
+        };
+
         if (curl_errno($ch)) {
             $errorMsg = curl_error($ch);
-            printf("Error received while downloading file $errorMsg");
+            $closeResources($ch, $fp);
+            throw new Exception("Error received while downloading file $errorMsg");
         }
 
-        curl_close($ch);
-
-        fclose($fp);
+        $closeResources($ch, $fp);
+        printf("Download completed to $targetFilePath\n");
     }
 }
