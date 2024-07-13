@@ -1,6 +1,5 @@
 <?
 
-
 class StringTokenizer
 {
 
@@ -41,7 +40,8 @@ class StringTokenizer
         return strtok($arg, $this->pattern);
     }
 
-    public function hasNext() {
+    public function hasNext()
+    {
         return $this->currToken != null;
     }
 }
@@ -50,7 +50,7 @@ $beautifulStr = new StringTokenizer("HELLO HELLOO@@ MY BEAUTIFUL WORLD!!!!");
 
 printf("\n\n\n");
 
-while($beautifulStr->hasNext()) {
+while ($beautifulStr->hasNext()) {
     echo $beautifulStr->nextToken() . PHP_EOL;
 }
 
