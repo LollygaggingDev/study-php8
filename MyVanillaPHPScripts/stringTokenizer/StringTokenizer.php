@@ -1,4 +1,4 @@
-<?
+<?php
 
 class StringTokenizer
 {
@@ -54,7 +54,7 @@ while ($beautifulStr->hasNext()) {
     echo $beautifulStr->nextToken() . PHP_EOL;
 }
 
-$depressedStr = new StringTokenizer("HELLO@@ HELLOO@@ MY DEPRESSED WORLD!!!!");
+$depressedStr = new StringTokenizer("HELLO@@ HELLOO@  @ MY DEPRESSED WORLD!!!!");
 
 while (($s = $depressedStr->nextToken()) != null) {
     echo $s . PHP_EOL;
